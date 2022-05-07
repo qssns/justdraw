@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<style>
+    * {
+        cursor: none;
+    }
+
+    body {
+        background-color: #202020;
+        color: white;
+        transition: all ease-in-out 0.3s;
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+    }
+
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(0deg, rgba(68, 68, 68, 0.2) 33%, #9147ff 100%);
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    .loader::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #263238;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    .bottom {
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<head>
+    <title>Waiting for server to respond...</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="main">
+        <div class="center">
+            <span class="loader"></span>
+        </div>
+    </div>
+</body>
+<script>
+    document.title = "Loading..."
+
+    const load = setTimeout(redir, 2000);
+
+    function redir() {
+        window.location.href = ("./app")
+    }
+</script>
+
+</html>

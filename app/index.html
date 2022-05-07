@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <title>Paint</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body onload="white()">
+    <section class="container">
+        <div id="toolbar">
+            <button id="clear">Clear</button>
+            <button id="download">Download</button>
+            <p></p>
+            <input class="w3-input w3-border w3-round-large" id="stroke" name='stroke' type="color" value="#FFFFFF">
+            <label style="text-shadow: 10px 10px 20px black;" for="stroke">Color</label>
+            <input class="w3-input w3-border w3-round-large" id="lineWidth" name='lineWidth' type="number" value="5">
+            <label style="text-shadow: 10px 10px 20px black;" for="lineWidth">Size</label>
+        </div>
+        <div style="box-shadow: inset 0 0 100px black;" class="drawing-board">
+            <canvas id="drawing-board">Your pc does not support canvas</canvas>
+        </div>
+    </section>
+    <script src="./canvas.js"></script>
+</body>
+
+</html>
